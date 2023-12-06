@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">选择你要修改的公告</view>
+</cu-custom>
+<view class="body">
+  <view class="container">
+    <view class="announcement" wx:for="{{list}}" data-item="{{item._id}}" wx:key="index" bindtap="editThis">
+      <view class="item">
+        <view class="bigTitle">
+          <text class="title">{{item.title}}</text>
+          <view class="info">
+            <text class="time">发布日期: {{item.createTime}}</text>
+            <text class="author">发布者: {{item.username}}</text>
+          </view>
+        </view>
+        <text class="content">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>

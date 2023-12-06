@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "miniprogram-api-typings": "^3.12.1"
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.11.1",
+    "mini-color-picker": "^0.1.2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search-input": "../../components/search-input/search-input",
+    "addAndEditHead": "../../components/addAndEditHead/addAndEditHead",
+    "van-popup": "@vant/weapp/popup/index"
+  }
+}

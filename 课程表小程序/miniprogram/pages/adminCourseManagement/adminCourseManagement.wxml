@@ -1,0 +1,13 @@
+<cu-custom bgColor="bg-gradual-blue" isCustomList="{{true}}">
+  <view slot="backText" bindtap="toggleMore"><text class="cuIcon-unfold"></text>更多</view>
+  <view slot="content">课程数据管理</view>
+</cu-custom>
+<view class="body">
+  <van-popup show="{{showMore}}" position="top" round bind:close="toggleMore">
+    <view class="moreops">
+      <view class="moreMenu">
+        <addAndEditHead pageIndex="4"></addAndEditHead>
+      </view>
+    </view>
+  </van-popup>
+</view>

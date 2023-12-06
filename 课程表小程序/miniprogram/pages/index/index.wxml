@@ -1,0 +1,58 @@
+<cu-custom bgColor="bg-gradual-blue" isCustomList="{{true}}">
+  <view slot="backText" bindtap="toggleMore"><text class="cuIcon-unfold"></text>更多</view>
+  <view slot="content" bindtap="unfoldWeek"><text>第 {{nowWeek}} 周</text><text class="cuIcon-unfold"></text></view>
+</cu-custom>
+<view class="body">
+  <van-popup show="{{showMore}}" position="top" round bind:close="toggleMore">
+    <view class="moreops">
+      <view class="moreMenu">
+        <search-input />
+        <addAndEditHead pageIndex="0"></addAndEditHead>
+      </view>
+    </view>
+  </van-popup>
+  <view class="courseTable">
+    <view class="weekList">
+      <view class="thisMonth"><text>{{(selectedMonth)> 9 ? (selectedMonth) :'0'+(selectedMonth)}}</text><text>月</text></view>
+      <view class="weekItem" wx:for="{{daysPerWeek}}" wx:key="*this">
+        <text class="weekName">周{{isMonday?weekdayIndex[index+1]:weekdayIndex[index]}}</text>
+        <text class="weekDate">{{weekDateList[index]}}日</text>
+      </view>
+    </view>
+    <view class="courseContent">
+      <!--
+        这里就用图形化表单打印（展示）从服务器接收到的来自courseTable下该用户键值的课程信息，例如始末时间、颜色、地点、老师、组……
+      -->
+      <view class="courseNumList">
+        <view class="courseNum" wx:for="{{13}}" wx:key="*this">
+          {{(index + 1 )> 9 ? (index + 1) :'0'+(index+1)}}
+        </view>
+      </view>
+      <view class="courseTable">
+        <view class="tableBackground">
+          <view class="rowBg" wx:for="{{13}}" wx:key="*this">
+            <view class="colBg" wx:for="{{7}}" wx:key="*this">
+            </view>
+          </view>
+        </view>
+        <view class="courseItem" wx:for="{{courseList}}" wx:key="key" style="top:{{(item.startTime)*120}}rpx;left:{{(isMonday?item.whichDay:(item.whichDay+1>6?0:item.whichDay+1))*(750-50)/7}}rpx;height:{{((item.endTime-item.startTime+1)>0?item.endTime-item.startTime+1:1)*120}}rpx;">
+          <view class="courseItemContent" style="background-color:{{item.color}};">
+            <text>{{item.courseName}}\n{{item.teacher}}</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+<van-popup closeable show="{{showSelectWeek}}" position="bottom" bind:close="hideSelectWeek" round>
+  <view class="selectWeekPopup">
+    <view class="weekPopupTitle">切换周数</view>
+    <view class="weekPopupList">
+      <view class="weekPopupItem" wx:for="{{totalWeek}}" wx:key="*this" bindtap="getSelectedWeekDate">
+        <view bindtap="selectWeek" data-week="{{index+1}} " class="weekPopupContent {{nowWeek==index+1?'active':''}}">{{item+1}}</view>
+      </view>
+    </view>
+  </view>
+</van-popup>

@@ -1,0 +1,8 @@
+<view class="search">
+  <view class="search_input" bind:tap="gotoSearchPage">
+    <view class="search_bar_content">
+      <image src="../../images/search.png"></image>
+      <text>搜索</text>
+    </view>
+  </view>
+</view>

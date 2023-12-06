@@ -1,0 +1,39 @@
+.whichTime .time_picker{
+  padding: 5px;
+  background-color: #FFFFFF;
+  width: 100px;
+  border-radius: 15rpx;
+  margin-left: 10px;
+}
+
+.whichDay_picker {
+  padding: 5px;
+  background-color: #FFFFFF;
+  width: 50px;
+  border-radius: 15rpx;
+}
+
+.whichGroup_picker {
+  padding: 5px;
+  background-color: #FFFFFF;
+  width: 20px;
+  border-radius: 15rpx;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whichColor_picker {
+  padding: 5px;
+  background-color: #FFFFFF;
+  width: 40px;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  padding-top: 80px;
+}

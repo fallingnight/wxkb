@@ -1,0 +1,27 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">个人中心</view>
+</cu-custom>
+<view class="body">
+  <view class="unlogin" wx:if="{{didILogin==false}}">
+    <image class="unlogin_image" src="../../images/unlogin.png"></image>
+    <text class="unlogin_ID">未登录用户</text>
+    <button class="toRegister_button" bind:tap="toRegisterPage">注册</button>
+    <button class="toLogin_button" bind:tap="toLoginPage">登录</button>
+  </view>
+  <view class="loggedin" wx:if="{{didILogin==true}}">
+    <text class="loggedin_ID">欢迎, {{usernameDisplay}}</text>
+    <picker bindchange="bindPickerChange" value="{{accountStatus}}" range="{{array}}">
+      <view class="status_picker">
+        {{array[accountStatus]}}
+      </view>
+    </picker>
+    <button class="setStatus_button" bind:tap="setStatus">设置状态</button>
+    <button class="toLogout_button" bind:tap="toLogout">退出登录</button>
+  </view>
+</view>
+
+
+<!--
+  默认页面是未登录的，不过登录用户有缓存可以自动登录(或者token)
+  所以还要加一个「找回密码」！！！
+-->

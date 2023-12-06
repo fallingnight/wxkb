@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">修改课程</view>
+</cu-custom>
+
+<view class="body">
+  <view class="container">
+    <view class="courses" wx:for="{{list}}" data-item="{{item._id}}" wx:key="index" bindtap="editThis" style="background-color:{{item.color}};">
+      <view class="item">
+        <view class="bigTitle">
+          <text class="title">{{item.courseName}}</text>
+          <text class="teacher">{{item.teacher}}</text>
+          <view class="info">
+            <text class="info-txt">{{item.group}}组</text>
+            <text class="info-txt">星期{{whichDay[item.group]}}</text>
+            <text class="info-txt">自 第{{whichTime[item.startTime]}}节 至 第{{whichTime[item.endTime]}}节</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">搜索课程</view>
+</cu-custom>
+<form bindsubmit='inputForm'>
+<view class="inputBlock">
+  <view class="cell">
+    <text class="prefix">课程名</text>
+    <view class="weui-cell weui-cell_input">
+      <input bindinput="courseNameInputAction" class="weui-input" name="username_value" maxlength="10" placeholder="" />
+    </view>
+  </view>
+</view>
+<button class="toSearch_button" name="courseName" style="width: 80%;" form-type="submit">确认</button>
+</form>

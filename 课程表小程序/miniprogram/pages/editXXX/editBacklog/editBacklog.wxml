@@ -1,0 +1,24 @@
+<!--pages/editXXX/editBacklog/editBacklog.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">修改备忘录</view>
+</cu-custom>
+<view class="body">
+  <search-input />
+  <addAndEditHead pageIndex="2"></addAndEditHead>
+  <view class="container">
+    <view class="backlog {{item.shouldIRemind == true?'remindingAlarm':' '}}" wx:for="{{list}}" wx:key="index" data-item="{{item._id}}" bindtap="editThis">
+      <view class="item">
+        <view class="bigTitle">
+          <text class="title">{{item.title}}</text>
+          <text class="reminder" wx:if="{{item.shouldIRemind == true}}" style="color: white;">已到提醒时间: {{item.reminderTime}}</text>
+          <text class="reminderNo" wx:if="{{item.reminderOrNot == 1}}">提醒时间: {{item.reminderTime}}</text>
+          <view class="info">
+            <text class="time">创建时间: {{item.createTime}}</text>
+          </view>
+        </view>
+        <text class="content">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>

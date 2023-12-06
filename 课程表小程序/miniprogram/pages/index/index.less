@@ -1,0 +1,159 @@
+.moreops{
+   padding: 30rpx;
+}
+.moreMenu{
+  margin-top:150rpx;
+}
+
+.weekList{
+   position: fixed;
+   left: 0;
+   width: 100%;
+   height: 92rpx;
+   display: flex;
+   align-items: center;
+   z-index: 60;
+   background: #edf9ff;
+}
+
+.thisMonth{
+  width: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color:#666666;
+}
+
+.weekItem{
+  width: calc((100%-50rpx)/7);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weekName{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #444444;
+}
+
+.weekDate{
+  font-size: 24rpx;
+  color:#a1a1a1;
+}
+
+.courseContent{
+  width:100%;
+  padding-top:92rpx ;
+  display:flex;
+}
+
+
+.courseNumList{
+  width: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #edf9ff;
+}
+.courseNum{
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  columns: #999999;
+}
+
+.courseTable{
+  height:100%;
+  width:100%;
+  position: relative;
+}
+
+.tableBackground{
+  position: absolute;
+  width: 100%;
+  border-collapse: collapse;
+}
+.rowBg{
+  display: flex;
+  width: 100%;
+  height: 120rpx;
+  border-bottom: 3rpx solid #ccc;
+}
+
+.rowBg:nth-child(-n+4){
+  background-color: #e1fae9;
+}
+
+.rowBg:nth-child(n+5):nth-child(-n+9){
+  background-color: #faf0e1;
+}
+.rowBg:nth-child(n+9){
+  background-color: #e1ecfa;
+}
+.colBg{
+  flex: 1;
+  width: calc((100%-50rpx)/7);
+  height: 100%;
+  border-right: 3rpx solid #ccc;
+}
+
+.courseItem{
+  position: absolute;
+  width: calc((100%-50rpx)/7);
+  z-index: 1;
+  padding: 5rpx;
+}
+
+.courseItemContent{
+  width:100%;
+  height:100%;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color:#ffffff;
+  padding: 5rpx;
+}
+
+.selectWeekPopup{
+  padding: 30rpx;
+}
+
+.weekPopupTitle{
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.weekPopupList{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.weekPopupItem{
+  width:20%;
+  padding: 10rpx;
+}
+.weekPopupContent{
+  width: 100%;
+  height:100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  background-color: rgb(236, 247, 252);
+}
+.weekPopupContent.active{
+  background-color: rgb(132, 255, 234);
+  color:#fff;
+  font-weight: bold;
+}

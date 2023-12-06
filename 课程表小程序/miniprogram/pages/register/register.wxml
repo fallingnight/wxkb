@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">注册</view>
+</cu-custom>
+<view class="body">
+  <view class="title">
+    <text>注册</text>
+  </view>
+  <form bindsubmit='inputForm'>
+    <view class="input">
+
+      <view class="username">
+        <view class="inputBlock">
+          <view class="weui-cells__title">用户名:</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" name="username_value" maxlength="10" auto-focus placeholder="最大长度为10" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="password">
+        <view class="inputBlock">
+          <view class="weui-cells__title">密码:</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" name="password_value" password type="text" placeholder="密码" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="passwordAgain">
+        <view class="inputBlock">
+          <view class="weui-cells__title">重复密码:</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" name="passwordAgain_value" password type="text" placeholder="确认你的密码" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="submitInfo">
+      <button class="yes_button" form-type="submit">确认</button>
+    </view>
+  </form>
+</view>

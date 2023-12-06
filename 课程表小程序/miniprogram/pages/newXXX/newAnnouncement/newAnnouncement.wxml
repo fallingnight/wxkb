@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">添加公告</view>
+</cu-custom>
+<view class="body">
+  <view class="title">
+    <text>添加公告</text>
+  </view>
+  <form bindsubmit='inputForm'>
+    <view class="input">
+
+  
+        <view class="inputBlock">
+          <view class="weui-cells__title">标题:</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="announcementTitle" 
+              type='text'
+              name="title" 
+              maxlength="20" 
+              auto-focus 
+              placeholder="最大长度为20">
+              </input>
+            </view>
+          </view>
+        </view>
+
+
+
+        <view class="inputBlock">
+          <view class="weui-cells__title">公告内容:</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <textarea class="announcementContent" bindinput="getContent" auto-height value="{{content}}"></textarea>
+            </view>
+          </view>
+        </view>
+
+
+    </view>
+
+    <view class="submitInfo">
+      <button class="yes_button" form-type="submit">确认</button>
+    </view>
+  </form>
+
+</view>

@@ -1,0 +1,72 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">添加课程</view>
+</cu-custom>
+<view class="body">
+  <view class="title">
+    <text>添加课程</text>
+  </view>
+  <form bindsubmit='inputForm'>
+    <view class="input">
+
+      <view class="courseName">
+        <view class="inputBlock">
+          <view class="weui-cells__title">课程名:</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" auto-focus name="courseName" placeholder="" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="teacherName">
+        <view class="inputBlock">
+          <view class="weui-cells__title">任课教师:</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" name="teacher" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="whichTime">
+        <view class="picker_title">时间:</view>
+        <picker bindchange="bindPickerChange" value="{{dayIndex}}" range="{{dayArray}}">
+          <view class="whichDay_picker">
+            星期{{dayArray[dayIndex]}}
+          </view>
+        </picker>
+        <picker bindchange="bindStartTimeChange" value="{{startTime}}" range="{{timeArray}}">
+          <view class="time_picker">
+            自第{{timeArray[startTime]}}节课
+          </view>
+        </picker>
+        <picker bindchange="bindEndTimeChange" value="{{endTime}}" range="{{timeArray}}">
+          <view class="time_picker">
+            至第{{timeArray[endTime]}}节课
+          </view>
+        </picker>
+      </view>
+
+      <view class="customization">
+        <view class="picker_title_group">组:</view>
+        <picker bindchange="bindGroupChange" value="{{groupIndex}}" range="{{groupArray}}">
+          <view class="whichGroup_picker">
+            {{groupIndex}}
+          </view>
+        </picker>
+        <view class="picker_title_color">颜色:</view>
+        <view style="background:{{color}};width:100px;height:24px;" bindtap="toPick"></view>
+        <color-picker bindchangeColor="pickColor" initColor="{{color}}" show="{{pick}}" />
+      </view>
+
+    </view>
+
+    <view class="submitInfo">
+      <button class="yes_button" form-type="submit">确认</button>
+    </view>
+  </form>
+
+</view>

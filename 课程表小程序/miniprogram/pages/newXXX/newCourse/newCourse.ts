@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+import { Course, Coursedata, CourseGroup, Reminder } from '../../../dataStructure/dataStructure';
+import { rgb2hex,CourseTimeMap, mapToNearestTime } from '../../../utils/util';
+
+=======
 import { rgb2hex } from '../../../utils/util';
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 var app = getApp();
 const brightColors = [
   'rgb(255, 87, 51)', 'rgb(255, 215, 0)', 'rgb(199, 21, 133)', 'rgb(32, 178, 170)',
@@ -14,6 +20,69 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
+    whichDayArray: ['一', '二', '三', '四', '五', '六', '日'],
+    whichDayIndex: 0,
+
+    startTimeArray: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    startTimeIndex: 0,
+    endTimeArray: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    endTimeIndex: 1,
+
+    startWeekArray: [1],
+    startWeekIndex: 0,
+
+    endWeekArray: [1],
+    endWeekIndex: 15,
+
+    weekInfoArray: ['单周', '双周', '全周'],
+    weekInfoIndex: 2,
+    groupIndex:0,
+    color: brightColors[Math.floor(Math.random() * brightColors.length)],
+    pick: false,
+    coursedataStr:'',
+    newCourse: {
+      _courseTableID: '',
+      _coursedataID: '',
+      username: app.globalData.usernameDisplay,
+      courseName: '',
+      whichDay: 0,
+      startTime: '0',
+      endTime: '1',
+      startWeek: '0',
+      endWeek: '15',
+      weekInfo: '全周',
+      teacher: '',
+      place: '',
+      group: '',
+      color: '',
+      reminderID:''
+    } as Course,
+    reminder:{
+      status: 0,
+      eventTime: '',
+      reminderTime: '',
+      _id: '',
+    }as Reminder,
+    coursedataRawList:[] as Coursedata[],
+    coursedataList: [] as CoursedataString[],
+    coursedataListShow: [] as CoursedataString[],
+    groupList:[] as CourseGroup[],
+  },
+  placeInputAction: function (options: { detail: any }) {
+    this.data.newCourse.place = options.detail.value
+  },
+  teacherInputAction: function (options: { detail: any }) {
+    this.data.newCourse.teacher = options.detail.value
+  },
+  courseNameInputAction: function (options: { detail: any }) {
+    this.data.newCourse.courseName = options.detail.value
+  },
+  bindDayChange: function (e: { detail: { value: any } }) {
+    this.data.newCourse.whichDay = parseInt(e.detail.value);
+    this.setData({
+      whichDayIndex: parseInt(e.detail.value)
+=======
     courseName: { type: String, value: "null" },
     teacher: { type: String },
     dayArray: ['一', '二', '三', '四', '五', '六', '日'],
@@ -59,16 +128,45 @@ Page({
   bindPickerChange: function (e: { detail: { value: any } }) {
     this.setData({
       dayIndex: e.detail.value
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     })
   },
   bindStartTimeChange: function (e: { detail: { value: any } }) {
     this.setData({
+<<<<<<< HEAD
+      startTimeIndex: e.detail.value,
+      'newCourse.startTime':e.detail.value,
+=======
       startTime: e.detail.value
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     })
   },
   bindEndTimeChange: function (e: { detail: { value: any } }) {
     this.setData({
+<<<<<<< HEAD
+      endTimeIndex: e.detail.value,
+      'newCourse.endTime':e.detail.value,
+    })
+  },
+  bindWeekInfoChange: function (e: { detail: { value: any } }) {
+    this.setData({
+      weekInfoIndex: e.detail.value,
+    })
+    this.data.newCourse.weekInfo = this.data.weekInfoArray[this.data.weekInfoIndex];
+  },
+  bindStartWeekChange: function (e: { detail: { value: any } }) {
+    this.setData({
+      startWeekIndex: e.detail.value,
+      'newCourse.startWeek':e.detail.value,
+    })
+  },
+  bindEndWeekChange: function (e: { detail: { value: any } }) {
+    this.setData({
+      endWeekIndex: e.detail.value,
+      'newCourse.endWeek':e.detail.value,
+=======
       endTime: e.detail.value
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     })
   },
   bindGroupChange: function (e: { detail: { value: any } }) {
@@ -76,6 +174,49 @@ Page({
       groupIndex: e.detail.value
     })
   },
+<<<<<<< HEAD
+  bindPickerCoursedata: function (e: { detail: { value: any } }) {
+    let i = e.detail.value;
+    let content = this.data.coursedataListShow[i].content;
+    let id = this.data.coursedataListShow[i]._id;
+    const matchingItem = this.data.coursedataRawList.find(item => item._id === id);
+    this.setData({
+      coursedataStr:content
+    });
+    if(matchingItem){
+      this.setData({
+        'newCourse.courseName':matchingItem.courseName,
+        'newCourse.whichDay':matchingItem.whichDay,
+         whichDayIndex: matchingItem.whichDay,
+        'newCourse.startTime': matchingItem.startTime,
+         startTimeIndex:parseInt(matchingItem.startTime),
+        'newCourse.endTime': matchingItem.endTime,
+         endTimeIndex:parseInt(matchingItem.endTime),
+        'newCourse.startWeek': matchingItem.startWeek,
+         startWeekIndex:parseInt(matchingItem.startWeek),
+        'newCourse.endWeek': matchingItem.endWeek,
+         endWeekIndex: parseInt(matchingItem.endWeek),
+        'newCourse.weekInfo': matchingItem.weekInfo,
+         weekInfoIndex:this.data.weekInfoArray.indexOf(matchingItem.weekInfo),
+        'newCourse.teacher': matchingItem.teacher,
+        'newCourse.place': matchingItem.place,
+        'newCourse._coursedataID':matchingItem._id
+      })
+    }
+  },
+  handleCoursedataInput: function (e: { detail: { value: any } }) {
+        let val = e.detail.value;
+        const coursedatalist =this.data.coursedataList;             
+        if(val){
+          let a =coursedatalist.filter(item => item.content.indexOf(val) != -1)
+          this.setData({coursedataListShow:a})
+        }
+        else{
+          this.setData({coursedataListShow:this.data.coursedataList})
+        }
+  },
+=======
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   pickColor: function (e: { detail: { color: any; }; }) {
     this.setData({
       color: e.detail.color
@@ -86,6 +227,94 @@ Page({
       pick: true
     })
   },
+<<<<<<< HEAD
+  getStartTimeArray() {
+    var timeArray = []
+    for (var i = 1; i <= 20; i++) {
+      var time = i
+      timeArray.push(time);
+    }
+    this.setData({
+      startWeekArray: timeArray,
+      endWeekArray: timeArray
+    })
+  },
+  getAllCoursedata() {
+    var that = this;
+    wx.request({
+      url: "http://localhost:3000/admin/courses",
+      header: {
+        'content-type': 'application/json'
+      },
+      method: 'GET',
+
+      success(res) {
+        console.log("信息获取成功")
+        const cdlist=res.data as Coursedata[];
+        const cslist: CoursedataString[]=[];
+        cdlist.forEach(async (coursedata, index) => {
+          const content=coursedata.schoolID+' '+coursedata.courseName+' '+coursedata.teacher+' '+coursedata.place;
+          const id=coursedata._id;
+          const coursedatastring={_id:id,content:content};
+          cslist.push(coursedatastring)
+        }
+      )
+        that.setData({
+          coursedataRawList:cdlist,
+          coursedataList:cslist,
+          coursedataListShow:cslist
+        });
+    },
+      fail(error) {
+        console.error(`未能连上数据库！`, error);
+      }
+    })
+
+  },
+  getCourseGroups(){
+    var that = this;
+    wx.request({
+      url: "http://localhost:3000/api/courseGroup/get-courseGroup",
+      data: {
+        "username": app.globalData.usernameDisplay
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      method: 'POST',
+      responseType: 'text',
+
+      success(res) {
+        console.log("获取课程组成功")
+        that.setData({
+          groupList:res.data as CourseGroup[]
+        });
+      },
+      fail() {
+        wx.hideLoading()
+        console.log("未能连上服务器数据库")
+        return;
+      }});
+
+  },
+  addCourse(){
+    var that = this;
+    console.log(app.globalData.usernameDisplay);
+    this.setData({
+        "newCourse.color":rgb2hex(this.data.color),
+        "newCourse.username":app.globalData.usernameDisplay,
+        "newCourse.group":this.data.groupList[this.data.groupIndex]._id
+    });
+    if(this.data.newCourse.courseName == '') {
+      wx.showToast({
+        title: '课程名不能为空',
+        icon: 'error'
+      })
+      return;
+    }
+    if ((parseInt(this.data.newCourse.startTime) > parseInt(this.data.newCourse.endTime))||(parseInt(this.data.newCourse.startWeek) > parseInt(this.data.newCourse.endWeek))) {
+    console.log(this.data.newCourse.startTime,this.data.newCourse.endTime,this.data.newCourse.startWeek,this.data.newCourse.endWeek)
+=======
   inputForm(data: { detail: { value: { courseName: string; teacher: any; }; }; }) {
     if (data.detail.value.courseName == 'null') {
       console.log(data.detail.value.courseName, this.data.startTime)
@@ -97,6 +326,7 @@ Page({
       return
     }
     if (this.data.startTime > this.data.endTime) {
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       wx.showToast({
         title: '时间设置错误',
         icon: 'error',
@@ -105,6 +335,24 @@ Page({
       return
     }
     wx.showLoading({
+<<<<<<< HEAD
+      title: "添加中"
+    });
+    const sectionInfo = CourseTimeMap[parseInt(this.data.newCourse.startTime)+1];
+
+      if (sectionInfo) {
+      const startTime = sectionInfo.start;
+      const [hour, minute] = startTime.split(':');
+      const {formatedDate,formatReminderDate}=mapToNearestTime(this.data.newCourse.whichDay,hour,minute)
+      this.setData({
+        'reminder.eventTime':formatedDate,
+        'reminder.reminderTime':formatReminderDate,
+      })
+    }
+    wx.request({
+      url: "http://localhost:3000/api/reminder/new",
+      data: this.data.reminder,
+=======
       title: "上传中"
     })
     wx.request({
@@ -119,24 +367,58 @@ Page({
         "group": this.data.groupIndex,
         "color": rgb2hex(this.data.color)
       },
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       header: {
         'content-type': 'application/json'
       },
       method: 'POST',
       responseType: 'text',
+<<<<<<< HEAD
+      success(res) {
+        console.log(res)
+        that.setData({
+          reminder: res.data as Reminder,
+        })
+        that.setData({
+          'newCourse.reminderID':that.data.reminder._id,
+        })
+        console.log(that.data.newCourse);
+        wx.request({
+        url: "http://localhost:3000/api/course/new",
+        data: that.data.newCourse,
+        header: {
+        'content-type': 'application/json'
+        },
+        method: 'POST',
+        responseType: 'text',
+
+        success(res) {
+=======
 
       success(res) {
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
         wx.hideLoading()
         console.log("添加成功")
         console.log(res)
         wx.navigateBack();
         return
+<<<<<<< HEAD
+        },
+        fail() {
+        wx.hideLoading()
+        console.log("未能连上服务器数据库")
+        }
+    });}
+  });
+
+=======
       },
       fail() {
         wx.hideLoading()
         console.log("未能连上服务器数据库")
       }
     })
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
 
 
@@ -144,7 +426,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+<<<<<<< HEAD
+    this.getStartTimeArray();
+    this.getAllCoursedata();
+    this.getCourseGroups();
+    this.setData({
+      'newCourse._courseTableID': app.globalData.courseTable[app.globalData.nowCourseTableIndex]._id,
+    });
+=======
   
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
 
   /**
@@ -158,10 +449,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+<<<<<<< HEAD
+    /*
+    this.setData({
+      color:brightColors[Math.floor(Math.random() * brightColors.length)]
+    });
+    */
+=======
     this.setData({
       color:brightColors[Math.floor(Math.random() * brightColors.length)]
     });
   
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
 
   /**
@@ -198,4 +497,13 @@ Page({
   onShareAppMessage() {
 
   }
+<<<<<<< HEAD
 })
+
+interface CoursedataString{
+  _id:string;
+  content:string;
+}
+=======
+})
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import { getNowFullTime} from '../../../utils/util';
+
+=======
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 var app=getApp()
 Page({
 
@@ -27,7 +32,11 @@ Page({
       url: "http://localhost:3000/api/announcement/new",
       data: {
         "username": app.globalData.usernameDisplay,
+<<<<<<< HEAD
+        "createTime": getNowFullTime(),
+=======
         "createTime": this.getNowDate(),
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
         "title": data.detail.value.title,
         "content": this.data.content
       },
@@ -39,8 +48,21 @@ Page({
 
       success(res) {
         wx.hideLoading()
+<<<<<<< HEAD
+        if(res.statusCode!=404){
+          console.log("添加成功")
+          }else{
+            wx.showToast({
+              title: '公告已达上限',
+              icon: 'error',
+              duration: 1000
+            });
+            return
+          }
+=======
         console.log("添加成功")
         console.log(res)
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
         wx.navigateBack();
         return
       },
@@ -55,6 +77,8 @@ Page({
     this.data.content=e.detail.value
   },
 
+<<<<<<< HEAD
+=======
   getNowDate() {
     var myDate = new Date;
     var year = myDate.getFullYear(); //获取当前年
@@ -68,6 +92,7 @@ Page({
   },
 
 
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   /**
    * 生命周期函数--监听页面加载
    */

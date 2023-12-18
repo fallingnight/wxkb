@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+<cu-custom bgColor="bg-gradual-blue" isCustomList="{{true}}">
+  <view slot="backText" bindtap="toggleMore" wx:if="{{isAdmin}}"><text class="cuIcon-unfold"></text></view>
+=======
 <cu-custom bgColor="bg-gradual-blue"  isCustomList="{{true}}">
   <view slot="backText" bindtap="toggleMore" wx:if="{{isAdmin}}"><text class="cuIcon-unfold"></text>更多</view>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   <view slot="content">公告</view>
 </cu-custom>
 <view class="body">
@@ -11,6 +16,25 @@
     </view>
   </van-popup>
   <view class="container">
+<<<<<<< HEAD
+    <!-- 列表渲染 -->
+    <view class="announcement" wx:for="{{announcementList}}" wx:key="index">
+      <!-- 导航组件 -->
+      <navigator url="/pages/announcement/detail/detail?id={{item._id}}">
+        <view class="item">
+            <view class="bigTitle">
+              <text class="title">{{item.title}}</text>
+              <!-- <text class="info">{{item.id}}</text> -->
+              <view class="info">
+                <text class="time">发布日期: {{item.createTime}}</text>
+               <text class="time">最近一次修改: {{item.lastEditTime}}</text>
+                <text class="author">发布者: {{item.username}}</text> 
+              </view>
+            </view>
+          <view class="announcementContent"><text class="content">{{item.content}}</text></view>
+        </view>
+      </navigator>
+=======
     <view class="announcement" wx:for="{{list}}" wx:key="index">
       <view class="item">
         <view class="bigTitle">
@@ -23,6 +47,7 @@
         </view>
         <text class="content">{{item.content}}</text>
       </view>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     </view>
   </view>
 </view>

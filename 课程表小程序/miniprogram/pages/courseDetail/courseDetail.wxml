@@ -1,0 +1,76 @@
+<!--pages/courseDetail/courseDetail.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">课程详情</view>
+</cu-custom>
+<view class="container">
+  <view class="info-box">
+    <view class="course-title" style="background-color: {{course.color}};">{{course.
+courseName}}</view>
+    <view class="info-list">
+      <view class="info-item">
+        <view class="info-item__key">
+          授课教师：
+        </view>
+        <view class="info-item__val">
+          {{course.teacher}}
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-item__key">
+          上课地点：
+        </view>
+        <view class="info-item__val">
+          {{course.place}}
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-item__key">
+          上课周数：
+        </view>
+        <view class="info-item__val">
+          {{course.startWeek-0+1}}-{{course.endWeek-0+1}} {{course.weekInfo}}
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-item__key">
+          上课时间：
+        </view>
+        <view class="info-item__val">
+          星期{{whichDayArray[course.whichDay]}} {{course.startTime-0+1}}-{{course.endTime-0+1}}节 {{CourseTimeMap[course.startTime-0+1].start}}-{{CourseTimeMap[course.endTime-0+1].end}}
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-item__key">
+          课程分组：
+        </view>
+        <view class="info-item__val">
+          {{group.groupname}}
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-item__key">
+          提醒状态：
+        </view>
+        <view class="info-item__val">
+          {{reminder.status==1?'已开启':'已关闭'}}
+        </view>
+      </view>
+      <view class="info-item" wx:if="{{reminder.status==1}}">
+        <view class="info-item__key">
+          提醒时间：
+        </view>
+        <view class="info-item__val">
+          {{reminder.reminderTime}}
+        </view>
+      </view>
+    </view>
+  </view>
+<view class="backlog-list">
+<view class="backloglist-title">关联的备忘录</view>
+  <view class="backlog-item" wx:for="{{backlogList}}" wx:key="index">
+      <view class="backlog-title">{{index+1}}.{{item.title}}</view>
+      <view class="backlog-content"><text class="backlog-contentText">{{item.content}}</text></view>
+  </view>
+</view>
+</view>

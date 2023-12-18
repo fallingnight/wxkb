@@ -10,4 +10,35 @@
       </view>
     </view>
   </van-popup>
+<<<<<<< HEAD
+
+  <view class="course-list-section dfcs">
+    <view class="course-list dfcs">
+      <view class="course-item dfcs" wx:for="{{courseList}}" wx:key="course" style="background-color: rgb(228, 118, 118);">
+          <view class="course-content"  bindtap="toEdit" data-id="{{item._id}}">
+            <view class="course-name">
+            <view class="name">{{item.courseName}}</view>
+          </view>
+          <view class="course-teacher">
+            <view class="teacher">{{item.teacher}}</view>
+          </view>
+          <view class="course-detail dfrs">
+            <view class="school">{{item.schoolID}}</view>
+            <view class="start-week">周{{whichDayArray[item.whichDay]}}</view>
+            <view class="start-week">{{item.startWeek-0+1}}-{{item.endWeek-0+1}}周</view>
+            <view class="start-end dfcc">
+              <view class="dfrs">
+                <view>自</view>
+                <view>第{{item.startTime-0+1}}节课</view>
+                <view>至</view>
+                <view>第{{item.endTime-0+1}}节课</view>
+              </view>
+            </view>
+          </view>
+          </view>
+      </view>
+    </view>
+  </view>
+=======
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 </view>

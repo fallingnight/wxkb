@@ -10,12 +10,32 @@
       "list": [
         {
           "name": "",
+<<<<<<< HEAD
+          "pathName": "pages/newXXX/newCoursedata/newCoursedata",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+=======
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           "pathName": "pages/adminCourseManagement/adminCourseManagement",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
+<<<<<<< HEAD
+          "name": "什么玩意这是",
+          "pathName": "pages/editXXX/editBacklog/editBacklog",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+=======
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           "name": "newcourse",
           "pathName": "pages/newXXX/newCourse/newCourse",
           "query": "",

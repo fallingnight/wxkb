@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view class="functionButton" wx:if="{{didILogin==true&&pageIndex!=4}}">
   <view class="buttonBox">
     <button class="addCourseButton" style="width:85%" bind:tap="toAddPage">添 加</button>
@@ -15,4 +16,23 @@
     <button class="editCourseButton" style="width:85%" bind:tap="toEditPage">搜索课程</button>
      </view>
 </view>
+=======
+<view class="functionButton" wx:if="{{didILogin==true&&pageIndex!=4}}">
+  <view class="buttonBox">
+    <button class="addCourseButton" style="width:85%" bind:tap="toAddPage">添 加</button>
+  </view>
+  <view class="buttonBox">
+    <button class="editCourseButton" style="width:85%" bind:tap="toEditPage">修 改</button>
+  </view>
+</view>
+<view wx:else>
+<view class="functionButton">
+<view class="buttonBox">
+    <button class="addCourseButton" style="width:85%" bind:tap="toAddPage">添加课程</button>
+  </view>
+  <view class="buttonBox">
+    <button class="editCourseButton" style="width:85%" bind:tap="toEditPage">搜索课程</button>
+     </view>
+</view>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 </view>

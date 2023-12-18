@@ -3,6 +3,46 @@
   <view slot="content">搜索课程</view>
 </cu-custom>
 <form bindsubmit='inputForm'>
+<<<<<<< HEAD
+  <view class="inputBlock">
+  <text class="prefix">**未填字段不参与检索**</text>
+</view>
+  <view class="inputBlock">
+    <view class="cell">
+      <text class="prefix">课程名</text>
+      <view class="weui-cell weui-cell_input">
+        <input bindinput="courseNameInputAction" class="weui-input editedText" name="username_value" maxlength="10" placeholder="" />
+      </view>
+    </view>
+  </view>
+  <view class="inputBlock">
+    <view class="cell">
+      <text class="prefix">教师名</text>
+      <view class="weui-cell weui-cell_input">
+        <input bindinput="teacherInputAction" class="weui-input editedText" name="teacher_value" maxlength="10" placeholder="" />
+      </view>
+    </view>
+  </view>
+  <view class="inputBlock">
+    <view class="cell">
+      <text class="prefix">上课地点</text>
+      <view class="weui-cell weui-cell_input">
+        <input bindinput="placeInputAction" class="weui-input editedText" name="place_value" maxlength="10" placeholder="" />
+      </view>
+    </view>
+  </view>
+
+  <view class="inputBlock">
+    <view class="cell">
+      <text class="prefix">日期</text>
+      <view class="weui-cell weui-cell_input">
+        <input bindinput="dayInputAction" class="weui-input editedText" name="date_value" maxlength="10" placeholder="星期一~星期日" />
+      </view>
+    </view>
+  </view>
+
+  <button class="toSearch_button" name="courseName" style="width: 80%;" form-type="submit">确认</button>
+=======
 <view class="inputBlock">
   <view class="cell">
     <text class="prefix">课程名</text>
@@ -12,4 +52,5 @@
   </view>
 </view>
 <button class="toSearch_button" name="courseName" style="width: 80%;" form-type="submit">确认</button>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 </form>

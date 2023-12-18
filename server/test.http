@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @url=http://localhost:3001/api
 @url_admin=http://localhost:3001/admin
 @json=Content-Type: application/json
@@ -109,4 +110,117 @@ post {{url}}/backlog/get-all-backlogs
 
 {
     "username": "user1"
+=======
+@url=http://localhost:3001/api
+@url_admin=http://localhost:3001/admin
+@json=Content-Type: application/json
+
+###查看用户库API
+get {{url}}/users
+
+###查看课程库API
+get {{url}}/courses
+
+###查看备忘录库API
+get {{url}}/backlogs
+
+###查看公告库API
+get {{url}}/announcements
+
+###设置管理员
+post {{url_admin}}/set
+{{json}}
+
+{
+    "username": "user1",
+    "admin": true
+}
+
+###查询课程
+post {{url_admin}}/course-search
+{{json}}
+
+{
+    "courseName": "幽默1"
+}
+#################### 以上为服务器数据库管理 ####################
+####################### 以下为用户端API #######################
+
+###注册接口
+post {{url}}/register
+{{json}}
+
+{
+    "username": "",
+    "password": ""
+}
+###登录接口
+post {{url}}/login
+{{json}}
+
+{
+    "username": "",
+    "password": ""
+}
+###课程添加API
+post {{url}}/course/new
+{{json}}
+
+{
+    "username": "",
+    "courseName": "English",
+    "whichDay": "0",
+    "startTime": "",
+    "endTime": "",
+    "teacher": "Big",
+    "group": "",
+    "color": ""
+}
+###公告添加API
+post {{url}}/announcement/new
+{{json}}
+
+{
+    "username": "",
+    "createTime": "",
+    "title": "",
+    "content": ""
+}
+###备忘录添加API
+post {{url}}/backlog/new
+{{json}}
+
+{
+    "username": "",
+    "createTime": "",
+    "title": "",
+    "content": ""
+}
+
+###课程编辑API
+post {{url}}/course/get-all-courses
+{{json}}
+
+{
+    "username": "user1"
+}
+
+###公告编辑API
+post {{url}}/announcement/edit
+{{json}}
+
+{
+    "_id": "655a1d2b57bdddd1ef8832e8",
+    "createTime": "655a1d2b57bdddd1ef8832e8",
+    "content": "655a1d2b57bdddd1ef8832e8",
+    "title": "655a1d2b57bdddd1ef8832e8"
+}
+
+###
+post {{url}}/backlog/get-all-backlogs
+{{json}}
+
+{
+    "username": "user1"
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 }

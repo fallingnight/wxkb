@@ -26,7 +26,11 @@
         <view class="weui-cells__title">公告内容:</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
+<<<<<<< HEAD
+            <textarea class="announcementContent" bindinput="getContent" maxlength="2000" auto-height value="{{_res[0].content}}"></textarea>
+=======
             <textarea class="announcementContent" bindinput="getContent" auto-height value="{{_res[0].content}}"></textarea>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           </view>
         </view>
       </view>

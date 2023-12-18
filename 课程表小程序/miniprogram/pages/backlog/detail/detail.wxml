@@ -1,0 +1,40 @@
+<!--pages/backlog/detail/detail.wxml-->
+<text>pages/backlog/detail/detail.wxml</text>
+
+<cu-custom bgColor="bg-gradual-blue" isCustomList="{{true}}">
+  <view slot="backText" bindtap="navigateBack">
+    <text class="cuIcon-back"></text>
+  </view>
+  <view slot="content" style="color: #ffffff;">备忘录详情</view>
+  <!-- <button slot="backText" bindtap="goBack">
+    返回
+  </button> -->
+</cu-custom>
+
+<view class="backlog-detail">
+  <view class="title">{{backlog.title}}</view>
+  <view class="info">
+    <text class="time">创建日期: {{backlog.createTime}}</text>
+  </view>
+  <view class="info">
+    <text class="event" wx:if="{{reminder[0].status}}">⭐ 待办事件:{{reminder[0].eventTime}}</text>
+  </view>
+  <text class="detail-content">{{backlog.content}}</text>
+</view>
+<view class="selectCourse">
+<view class="radioRow">
+    <van-radio-group value="{{checked}}" direction="horizontal" bind:change="onChangeCourse">
+      <van-radio name="1" checked-color="#ee0a24">关联课程</van-radio>
+      <van-radio name="2" checked-color="#ee0a24">不关联课程</van-radio>
+    </van-radio-group>
+</view>
+<view class="courseRelated" wx:if="{{checked=='1'}}">
+      <view class="picker_title">关联的课程:</view>
+          <view class="course_picker">
+            <picker  bindchange="bindPickerCourse" range-key="content" range="{{courseListShow}}">
+            <input type="text" value="{{courseStr?courseStr:''}}"  placeholder="请选择课程" bindinput="handleCourseInput" />
+
+    </picker>
+  </view>
+ </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "van-radio-group": "../../node_modules/@vant/weapp/dist/radio-group/index",
+  "van-radio": "../../node_modules/@vant/weapp/dist/radio/index",
+  "component": true
+  
+}

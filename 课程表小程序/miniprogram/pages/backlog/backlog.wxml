@@ -1,5 +1,9 @@
 <cu-custom bgColor="bg-gradual-blue" isCustomList="{{true}}">
+<<<<<<< HEAD
+  <view slot="backText" bindtap="toggleMore"><text class="cuIcon-unfold"></text></view>
+=======
   <view slot="backText" bindtap="toggleMore"><text class="cuIcon-unfold"></text>更多</view>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   <view slot="content">备忘录</view>
 </cu-custom>
 <view class="body">
@@ -11,6 +15,29 @@
     </view>
   </van-popup>
   <view class="container">
+<<<<<<< HEAD
+    <view class="backlog {{remindStatusList[index] == 1?'remindingAlarm':' '}}" wx:for="{{backlogList}}" wx:key="index">
+      <navigator url="/pages/backlog/detail/detail?id={{item._id}}">
+        <view class="item">
+          <view class="bigTitle">
+            <view class="smallTitle">
+              <text class="title">{{item.title}}</text>
+              <image wx:if="{{remindStatusList[index] == 2}}" class="bell" src="../../images/reminder.png"></image>
+              <image wx:if="{{remindStatusList[index] == 1}}" class="bell" src="../../images/reminder_active.png"></image>
+            </view>
+            <text class="reminder" wx:if="{{remindStatusList[index] == 1}}" style="color: white;">已到提醒时间: {{reminderList[index].reminderTime}}</text>
+            <text class="reminderNo" wx:if="{{remindStatusList[index] == 2}}">提醒时间: {{reminderList[index].reminderTime}}</text>
+            <view class="info">
+              <text class="event" wx:if="{{!remindStatusList[index] == 0}}">⭐待办事件: {{reminderList[index].eventTime}}</text>
+            </view>
+            <view class="info">
+              <text class="time">创建时间: {{item.createTime}}</text>
+            </view>
+          </view>
+          <!-- <text class="content">{{item.content}}</text> -->
+        </view>
+      </navigator>
+=======
     <view class="backlog {{item.shouldIRemind == true?'remindingAlarm':' '}}" wx:for="{{list}}" wx:key="index">
       <view class="item">
         <view class="bigTitle">
@@ -27,6 +54,7 @@
         </view>
         <text class="content">{{item.content}}</text>
       </view>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     </view>
   </view>
 </view>

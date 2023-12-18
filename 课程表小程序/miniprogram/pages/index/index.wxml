@@ -8,6 +8,25 @@
       <view class="moreMenu">
         <search-input />
         <addAndEditHead pageIndex="0"></addAndEditHead>
+<<<<<<< HEAD
+        <view class="functionButton">
+          <view class="buttonBox">
+          <button class="addCourseButton" style="width:85%;background-color: rgb(238, 199, 128);" bind:tap="selectCourseTable">编 辑 课 程 表</button>
+          </view>
+          <view class="buttonBox">
+          <button class="editCourseButton" style="width:85%;background-color:#d15d89;" bind:tap="selectCourseGroup">编 辑 课 程 组</button>
+  </view>
+</view>
+<view class="functionButton">
+          <view class="buttonBox">
+          <button class="addCourseButton" style="width:85%;background-color: rgb(118, 190, 172);" bind:tap="importCourseTable">导 入</button>
+          </view>
+          <view class="buttonBox">
+          <button class="editCourseButton" style="width:85%;background-color:#9685c5;" bind:tap="exportCourseTable">导 出</button>
+  </view>
+</view>
+=======
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       </view>
     </view>
   </van-popup>
@@ -35,9 +54,15 @@
             </view>
           </view>
         </view>
+<<<<<<< HEAD
+        <view class="courseItem" wx:for="{{courseList}}" wx:key="key" style="top:{{(item.startTime)*120}}rpx;left:{{(isMonday?item.whichDay:(item.whichDay+1>6?0:item.whichDay+1))*(750-50)/7}}rpx;height:{{((item.endTime-item.startTime+1)>0?item.endTime-item.startTime+1:1)*120}}rpx;" bind:tap="showDetail" data-item="{{item._id}}">
+          <view class="courseItemContent" wx:if="{{checked==1||(checked==2 && item.group==courseGroupList[nowCourseGroup-1]._id)}}" style="background-color:{{item.color}};opacity:{{xs.isCourseInCurrentWeek(item,nowWeek)}};">
+            <text>{{item.courseName}}\n{{item.teacher}}\n{{item.place}}\n{{xs.isCourseInCurrentWeek(item,nowWeek)===1?'':'(非本周课程)'}}</text>
+=======
         <view class="courseItem" wx:for="{{courseList}}" wx:key="key" style="top:{{(item.startTime)*120}}rpx;left:{{(isMonday?item.whichDay:(item.whichDay+1>6?0:item.whichDay+1))*(750-50)/7}}rpx;height:{{((item.endTime-item.startTime+1)>0?item.endTime-item.startTime+1:1)*120}}rpx;">
           <view class="courseItemContent" style="background-color:{{item.color}};">
             <text>{{item.courseName}}\n{{item.teacher}}</text>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           </view>
         </view>
       </view>
@@ -55,4 +80,79 @@
       </view>
     </view>
   </view>
+<<<<<<< HEAD
 </van-popup>
+<van-popup closeable show="{{showSelectCourseTable}}" position="bottom" bind:close="hideSelectCourseTable" round>
+  <view class="selectWeekPopup">
+    <view class="weekPopupTitle">切换课程表</view>
+    <view class="weekPopupList">
+      <view class="coursePopupItem" wx:for="{{courseTableList}}" wx:key="*this" bindtap="getCourseTable">
+        <view bindtap="selectNowTable" data-table="{{index+1}} " class="coursePopupContent {{nowCourseTable==index+1?'active':''}}">{{index+1}}</view>
+      </view>
+      <view class="coursePopupItem" bindtap="getCourseTable">
+        <view bindtap="addCourseTable" class="coursePopupContent active new">+</view>
+      </view>
+      <view class="coursePopupItem" bindtap="getCourseTable">
+        <view bindtap="deleteCourseTable" class="coursePopupContent active del">×</view>
+      </view>
+    </view>
+  </view>
+</van-popup>
+<van-popup closeable show="{{showSelectCourseGroup}}" position="bottom" bind:close="hideSelectCourseGroup" round>
+  <view class="selectWeekPopup">
+    <view class="weekPopupTitle">编辑课程组</view>
+    <view class="weekPopupList">
+      <view class="coursePopupItem" wx:for="{{courseGroupList}}" wx:key="*this" bindtap="getCourseGroup">
+        <view bindtap="selectNowGroup" data-group="{{index+1}} " class="coursePopupContent {{nowCourseGroup==index+1?'active':''}}">{{item.groupname}}</view>
+      </view>
+      <view class="coursePopupItem" bindtap="getCourseGroup">
+        <view bindtap="addCourseGroup" class="coursePopupContent active new">+</view>
+      </view>
+      <view class="coursePopupItem" bindtap="getCourseGroup">
+        <view bindtap="deleteCourseGroup" class="coursePopupContent active del">×</view>
+      </view>
+    </view>
+    <view>
+<view class="radioRow">
+    <van-radio-group value="{{checked}}" direction="horizontal" bind:change="onChangeShowGroups">
+      <van-radio name="1" checked-color="#ee0a24">显示全部课程</van-radio>
+      <van-radio name="2" checked-color="#ee0a24">显示选中组内课程</van-radio>
+    </van-radio-group>
+</view>
+</view>
+  </view>
+</van-popup>
+<wxs module="xs">
+    module.exports.isCourseInCurrentWeek=function(item,nowWeek) {
+      var isOddWeek = nowWeek % 2 === 1;
+      
+      if (item.weekInfo === "单周" && isOddWeek) {
+        if(parseInt(item.startWeek) <= nowWeek-1 && parseInt(item.endWeek) >= nowWeek-1){
+          return 1;
+        }else{
+          return 0;
+        }
+      } else if (item.weekInfo === "双周" && !isOddWeek) {
+        if(parseInt(item.startWeek) <= nowWeek-1 && parseInt(item.endWeek) >= nowWeek-1){
+          return 1;
+        }else{
+          return 0;
+        }
+      } else if (item.weekInfo === "全周") {
+        if(parseInt(item.startWeek) <= nowWeek-1 && parseInt(item.endWeek) >= nowWeek-1){
+          return 1;
+        }else{
+          return 0;
+        }}
+   if(parseInt(item.startWeek) <= nowWeek-1 && parseInt(item.endWeek) >= nowWeek-1){
+      return 0.5;
+    }else{
+      return 0;
+    }
+    };
+
+
+</wxs>
+=======
+</van-popup>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

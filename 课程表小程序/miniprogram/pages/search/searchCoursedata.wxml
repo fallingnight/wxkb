@@ -2,6 +2,37 @@
   <view slot="backText">返回</view>
   <view slot="content">搜索课程</view>
 </cu-custom>
+<<<<<<< HEAD
+<view class="body dfcs">
+  <view class="search-section dfcs">
+    <view class="search-head dfrs">
+      <view class="search-input flex1">
+        <input placeholder="请输入搜索老师姓名、地址或者学校名称" bindinput="searchTextChange"/>
+      </view>
+      <view class="seaarch-btn">
+        <button class="mini-btn" type="default" size="mini" bindtap="searchCourse">搜索</button>
+      </view>
+    </view>
+
+    <view wx:if="{{searchResult.length > 0}}" class="search-result dfcs">
+      <view class="dfrs title">
+        <view class="">课程名</view>
+        <view class="">老师</view>
+        <view class="">地址</view>
+        <view class="">操作</view>
+      </view>
+      <view class="dfcs">
+        <view class="dfrs course-item" wx:for="{{searchResult}}" wx:key="search">
+          <view>{{item.courseName}}</view>
+          <view>{{item.teacher}}</view>
+          <view>{{item.place}}</view>
+          <view class="edit" bindtap="toEdit" data-id="{{item._id}}">编辑</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+=======
 <form bindsubmit='inputForm'>
 <view class="inputBlock">
   <view class="cell">
@@ -13,3 +44,4 @@
 </view>
 <button class="toSearch_button" name="courseName" style="width: 80%;" form-type="submit">确认</button>
 </form>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

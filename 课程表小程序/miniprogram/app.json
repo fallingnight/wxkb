@@ -1,3 +1,84 @@
+<<<<<<< HEAD
+{
+  "pages": [
+    "pages/me/me",
+    "pages/index/index",
+    "pages/announcement/announcement",
+    "pages/backlog/backlog",
+    "components/search-input/search-input",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/newXXX/newCourse/newCourse",
+    "pages/newXXX/newBacklog/newBacklog",
+    "pages/newXXX/newAnnouncement/newAnnouncement",
+    "pages/newXXX/newCoursedata/newCoursedata",
+    "components/addAndEditHead/addAndEditHead",
+    "pages/editXXX/editBacklog/editBacklog",
+    "pages/editXXX/editAnnouncement/editAnnouncement",
+    "pages/editXXX/editCourse/editCourse",
+    "pages/editXXX/editCoursedata/editCoursedata",
+    "pages/editXXX/editAnnouncement/editInput",
+    "pages/editXXX/editCourse/editInput",
+    "pages/editXXX/editBacklog/editInput",
+    "pages/search/search",
+    "pages/search/searchCoursedata",
+    "pages/courseDetail/courseDetailList",
+    "pages/adminCourseManagement/adminCourseManagement",
+    "pages/announcement/detail/detail",
+    "pages/backlog/detail/detail",
+    "components/editReminder/editReminder",
+    "pages/courseDetail/courseDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#50d0d0",
+    "navigationBarTitleText": "课程表",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/main_page.png",
+        "selectedIconPath": "images/main_page_active.png"
+      },
+      {
+        "pagePath": "pages/announcement/announcement",
+        "text": "公告",
+        "iconPath": "images/announcement.png",
+        "selectedIconPath": "images/announcement_active.png"
+      },
+      {
+        "pagePath": "pages/backlog/backlog",
+        "text": "备忘录",
+        "iconPath": "images/backlog.png",
+        "selectedIconPath": "images/backlog_active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_active.png"
+      },
+      {
+        "pagePath": "pages/adminCourseManagement/adminCourseManagement",
+        "text": "数据管理",
+        "iconPath": "images/main_page.png",
+        "selectedIconPath": "images/main_page_active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+=======
 {
   "pages": [
     "pages/me/me",
@@ -74,4 +155,5 @@
     "cu-custom": "/colorui/components/cu-custom"
   },
   "sitemapLocation": "sitemap.json"
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 }

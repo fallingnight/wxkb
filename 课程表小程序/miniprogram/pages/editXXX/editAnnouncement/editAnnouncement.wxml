@@ -13,7 +13,11 @@
             <text class="author">发布者: {{item.username}}</text>
           </view>
         </view>
+<<<<<<< HEAD
+        <view class="announcementContent"><text class="content">{{item.content}}</text></view>
+=======
         <text class="content">{{item.content}}</text>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       </view>
     </view>
   </view>

@@ -1,3 +1,111 @@
+<<<<<<< HEAD
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{pageTitle}}</view>
+</cu-custom>
+<view class="body dfcs">
+    <view class="items dfcs">
+        <view class="item dfrs">
+          <view class="label dfcc center">课程名称</view>
+          <view class="normal-input">
+            <input   maxlength="10" bindinput="bindCourseNameInput" placeholder="请输入课程名称" value="{{newCourse.courseName}}"/>
+          </view>
+        </view>
+
+        <view class="item dfrs">
+          <view class="label dfcc center">星期</view>
+          <view class="dfrc flex1">
+            <picker bindchange="bindWhichDayChange" class="flex1" value="{{whichDayIndex}}" range="{{whichDayArray}}">
+              <view class="picker">
+                {{whichDayArray[whichDayIndex]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="item dfrs">
+          <view class="label dfcc center">开始时间</view>
+          <view class="dfrc flex1">
+            <picker bindchange="bindStartTimeChange" class="flex1" value="{{startTimeIndex}}" range="{{startTimeArray}}">
+              <view class="picker">
+                第{{startTimeArray[startTimeIndex]}}节课
+              </view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="item dfrs">
+          <view class="label dfcc center">结束时间</view>
+          <view class="dfrc flex1">
+              <picker bindchange="bindEndTimeChange" class="flex1" value="{{endTimeIndex}}" range="{{endTimeArray}}">
+                <view class="picker">
+                  第{{endTimeArray[endTimeIndex]}}节课
+                </view>
+              </picker>
+            </view>
+        </view>
+
+        <view class="item dfrs">
+          <view class="label dfcc center">开始周数</view>
+          <view class="dfrc flex1">
+              <picker bindchange="bindStartWeekChange" class="flex1" value="{{startWeekIndex}}" range="{{startWeekArray}}">
+                <view class="picker">
+                  {{startWeekArray[startWeekIndex]}}
+                </view>
+              </picker>
+            </view>
+        </view>
+
+        <view class="item dfrs">
+          <view class="label dfcc center">结束周数</view>
+          <view class="dfrc flex1">
+              <picker bindchange="bindEndWeekChange" class="flex1" value="{{endWeekIndex}}" range="{{endWeekArray}}">
+                <view class="picker">
+                  {{endWeekArray[endWeekIndex]}}
+                </view>
+              </picker>
+            </view>
+        </view>
+
+        <view class="item dfrs">
+          <view class="label dfcc center">单双周</view>
+          <view class="dfrc flex1">
+              <picker bindchange="bindWeekInfoChange" class="flex1" value="{{weekInfoIndex}}" range="{{weekInfoArray}}">
+                <view class="picker">
+                  {{weekInfoArray[weekInfoIndex]}}
+                </view>
+              </picker>
+            </view>
+        </view>
+
+        <view class="item dfrs">
+          <view class="label dfcc center">教师姓名</view>
+          <view class="normal-input" >
+            <input placeholder="请输入教师" bindinput="bindTeacherNameInput" value="{{newCourse.teacher}}"/>
+          </view>
+        </view>
+        <view class="item dfrs">
+          <view class="label dfcc center">授课地点</view>
+          <view class="normal-input" >
+            <input placeholder="请输入授课地点" bindinput="bindPlaceInput" value="{{newCourse.place}}"/>
+          </view>
+        </view>
+        <view class="item dfrs">
+          <view class="label dfcc center">学校名称</view>
+          <view class="normal-input" >
+            <input placeholder="请输入学校名称" bindinput="bindSchoolIDInput" value="{{newCourse.schoolID}}"/>
+          </view>
+        </view>
+        <view class="item dfrc">
+          <view class="label dfcc center">
+          <view class="editbuttons">
+          <view class="confirmbutton"><button type="primary" plain="true" size="mini" bindtap="editCourse">确认</button></view>
+            <button type="warn" plain="true" size="mini" bindtap="deleteCourse" >删除</button></view>
+          </view>
+        </view>
+    </view>
+=======
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
   <view slot="content">课程列表</view>
@@ -19,4 +127,5 @@
       </view>
     </view>
   </view>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 </view>

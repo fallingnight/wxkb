@@ -1,0 +1,36 @@
+<view class="reminderComponent">
+  <view bindtap="changeStatus">
+  <radio checked="{{status}}"><view class="remindtext">开启提醒</view></radio>
+</view>
+<view class="inputBlock" wx:if="{{status==true}}">
+          <text class=".weui-cells__title">事件时间: </text>
+          <view class="reminder__">
+            <picker mode="date" value="{{eventDate}}" bindchange="bindEventDateChange">
+              <view class="date_picker">
+                {{eventDate}}
+              </view>
+            </picker>
+            <picker mode="time" value="{{eventTime}}" bindchange="bindEventTimeChange">
+              <view class="time_picker">
+                {{eventTime}}
+              </view>
+            </picker>            
+          </view>
+ </view>
+<view class="inputBlock" wx:if="{{status==true}}">
+          <text class=".weui-cells__title">提醒时间: </text>
+          <view class="reminder__">
+            <picker mode="date" value="{{reminderDate}}" bindchange="bindReminderDateChange">
+              <view class="date_picker">
+                {{reminderDate}}
+              </view>
+            </picker>
+            <picker mode="time" value="{{time}}" bindchange="bindReminderTimeChange">
+              <view class="time_picker">
+                {{time}}
+              </view>
+            </picker>            
+          </view>
+</view>
+
+</view>

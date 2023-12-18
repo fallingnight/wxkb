@@ -26,7 +26,11 @@
         <view class="weui-cells__title">备忘录内容:</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
+<<<<<<< HEAD
+            <textarea class="backlogContent" bindinput="getContent" auto-height value="{{backlog.content}}"></textarea>
+=======
             <textarea class="backlogContent" bindinput="getContent" auto-height value="{{content}}"></textarea>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           </view>
         </view>
       </view>
@@ -34,13 +38,57 @@
       <view class="reminder">
         <view class="inputBlock">
           <text class=".weui-cells__title">设置提醒? </text>
+<<<<<<< HEAD
+          <picker mode="selector" value="{{reminder.status}}" range="{{reminderOrNotArray}}" bindchange="bindReminderStatusChange">
+            <view class="reminderOrNot_picker">
+              {{reminderOrNotArray[reminder.status]}}
+=======
           <picker mode="selector" value="{{reminderOrNot}}" range="{{reminderOrNotArray}}" bindchange="bindReminderOrNotChange">
             <view class="reminderOrNot_picker">
               {{reminderOrNotArray[reminderOrNot]}}
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
             </view>
           </picker>
         </view>
 
+<<<<<<< HEAD
+        <view class="inputBlock" wx:if="{{reminder.status==true}}">
+          <text class=".weui-cells__title">事件时间: </text>
+          <view class="reminder__">
+            <picker mode="date" value="{{eventDate}}" bindchange="bindEventDateChange">
+              <view class="date_picker">
+                {{eventDate}}
+              </view>
+            </picker>
+            <picker mode="time" value="{{eventTime}}" bindchange="bindEventTimeChange">
+              <view class="time_picker">
+                {{eventTime}}
+              </view>
+            </picker>            
+          </view>
+        </view>
+        <view class="inputBlock" wx:if="{{reminder.status==true}}">
+          <text class=".weui-cells__title">提醒时间: </text>
+          <view class="reminder__">
+            <picker mode="date" value="{{reminderDate}}" bindchange="bindReminderDateChange">
+              <view class="date_picker">
+                {{reminderDate}}
+              </view>
+            </picker>
+            <picker mode="time" value="{{time}}" bindchange="bindReminderTimeChange">
+              <view class="time_picker">
+                {{time}}
+              </view>
+            </picker>            
+          </view>
+        </view>
+
+      </view>
+
+      <view class="submitInfo">
+        <button class="yes_button" form-type="submit">确认</button>
+      </view>
+=======
         <view class="inputBlock" wx:if="{{reminderOrNot==true}}">
           <text class=".weui-cells__title">提醒时间: </text>
           <picker mode="date" value="{{reminderDate}}" bindchange="bindReminderDateChange">
@@ -55,6 +103,7 @@
 
     <view class="submitInfo">
       <button class="yes_button" form-type="submit">确认</button>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     </view>
   </form>
 

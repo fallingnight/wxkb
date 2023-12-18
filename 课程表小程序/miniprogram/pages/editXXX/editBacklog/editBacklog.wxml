@@ -4,6 +4,14 @@
   <view slot="content">修改备忘录</view>
 </cu-custom>
 <view class="body">
+<<<<<<< HEAD
+  <view class="container">
+    <view class="backlog {{remindStatusList[index] == 1?'remindingAlarm':' '}}" wx:for="{{backlogList}}" wx:key="index" data-item="{{item._id}}" bindtap="editThis">
+      <view class="item">
+        <view class="bigTitle">
+          <text class="title">{{item.title}}</text>
+          <text class="reminder" wx:if="{{!remindStatusList[index] == 0}}">待办事件: {{reminderList[index].eventTime}}</text>
+=======
   <search-input />
   <addAndEditHead pageIndex="2"></addAndEditHead>
   <view class="container">
@@ -13,6 +21,7 @@
           <text class="title">{{item.title}}</text>
           <text class="reminder" wx:if="{{item.shouldIRemind == true}}" style="color: white;">已到提醒时间: {{item.reminderTime}}</text>
           <text class="reminderNo" wx:if="{{item.reminderOrNot == 1}}">提醒时间: {{item.reminderTime}}</text>
+>>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           <view class="info">
             <text class="time">创建时间: {{item.createTime}}</text>
           </view>

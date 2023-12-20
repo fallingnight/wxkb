@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import {Announcement} from '../../dataStructure/dataStructure';
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 var app = getApp();
 Component({
   pageLifetimes: {
@@ -13,7 +10,6 @@ Component({
         })
       }
       this.setData({
-<<<<<<< HEAD
           didILogin: app.globalData.didILogin,
          isAdmin:app.globalData.amIAdministrator,
        })
@@ -64,46 +60,10 @@ Component({
     announcementList: [] as Announcement[],
   },
   methods: {
-=======
-        didILogin: app.globalData.didILogin,
-        isAdmin:app.globalData.amIAdministrator,
-      })
-      
-      var that = this
-      wx.request({
-        url: "http://localhost:3000/api/announcements",
-        header: {
-          'content-type': 'application/json'
-        },
-        method: 'GET',
-
-        success(res) {
-          console.log("信息获取成功")
-          that.setData({
-            list: res.data
-          })
-          return
-        },
-      })
-    }
-  },
-
-  data: {
-    didILogin: 'false',
-    showMore: false,
-    isAdmin:false,
-  },
-  methods:{
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     toggleMore() {
       this.setData({
         showMore: !this.data.showMore,
       });
     },
-<<<<<<< HEAD
   },
 });
-=======
-  }
-})
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

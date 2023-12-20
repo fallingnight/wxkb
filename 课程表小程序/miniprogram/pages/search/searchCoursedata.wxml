@@ -2,7 +2,6 @@
   <view slot="backText">返回</view>
   <view slot="content">搜索课程</view>
 </cu-custom>
-<<<<<<< HEAD
 <view class="body dfcs">
   <view class="search-section dfcs">
     <view class="search-head dfrs">
@@ -32,16 +31,3 @@
     </view>
   </view>
 </view>
-=======
-<form bindsubmit='inputForm'>
-<view class="inputBlock">
-  <view class="cell">
-    <text class="prefix">课程名</text>
-    <view class="weui-cell weui-cell_input">
-      <input bindinput="courseNameInputAction" class="weui-input" name="username_value" maxlength="10" placeholder="" />
-    </view>
-  </view>
-</view>
-<button class="toSearch_button" name="courseName" style="width: 80%;" form-type="submit">确认</button>
-</form>
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

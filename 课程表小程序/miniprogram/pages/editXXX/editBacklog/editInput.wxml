@@ -7,11 +7,7 @@
     <text>修改事项</text>
   </view>
   <view class="description">
-<<<<<<< HEAD
     <text>修改标题、备忘录内容和提醒时间</text>
-=======
-    <text>为避免意外不提供对事件提醒时间的修改</text>
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   </view>
   <form bindsubmit='inputForm'>
     <view class="input">
@@ -21,11 +17,7 @@
         <view class="weui-cells__title">标题:</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-<<<<<<< HEAD
             <input class="announcementTitle" type='text' name="title" maxlength="20" auto-focus value="{{backlog.title}}">
-=======
-            <input class="announcementTitle" type='text' name="title" maxlength="20" auto-focus value="{{_res[0].title}}">
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
             </input>
           </view>
         </view>
@@ -37,21 +29,14 @@
         <view class="weui-cells__title">备忘录内容:</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-<<<<<<< HEAD
             <textarea class="announcementContent" bindinput="getContent" auto-height value="{{backlog.content}}"></textarea>
-=======
-            <textarea class="announcementContent" bindinput="getContent" auto-height value="{{_res[0].content}}"></textarea>
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           </view>
         </view>
       </view>
 
 
     </view>
-<<<<<<< HEAD
     <editReminder reminderID="{{backlog.reminderID}}"></editReminder>
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 
     <view class="submitInfo">
       <button class="yes_button" form-type="submit">确认</button>

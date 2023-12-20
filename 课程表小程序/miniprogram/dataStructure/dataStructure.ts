@@ -1,15 +1,11 @@
 export interface Course {
-<<<<<<< HEAD
   _courseTableID:string;
   _coursedataID:string;
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   username: string;
   courseName: string;
   whichDay: number;
   startTime: string;
   endTime: string;
-<<<<<<< HEAD
   startWeek: string;
   endWeek: string;
   weekInfo:string;
@@ -18,12 +14,6 @@ export interface Course {
   group: string;
   color: string;
   reminderID:string;
-=======
-  teacher: string;
-  group: number;
-  color: string;
-  __v: number;
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   _id: string;
 }
 export interface User{
@@ -32,7 +22,6 @@ export interface User{
   admin: boolean;
   accountStatus: number;
   _id: string;
-<<<<<<< HEAD
 }
 
 export interface Announcement{
@@ -85,6 +74,4 @@ export interface CourseGroup{
   _id:string;
   groupname:string;
   username:string;
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 }

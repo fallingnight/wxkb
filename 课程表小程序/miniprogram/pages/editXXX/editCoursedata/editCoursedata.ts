@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {Coursedata} from '../../../dataStructure/dataStructure'; 
 
 var app = getApp();
@@ -58,28 +57,11 @@ Page({
       url: "http://localhost:3000/admin/get-specific-course",
       data: {
         "_id": options.id
-=======
-import {Course} from '../../../dataStructure/dataStructure'
-var app = getApp()
-Page({
-  data: {
-    whichDay: ['一','二','三','四','五','六','日'],
-    courseList: [] as Course[],
-  },
-
-  onLoad: function (options: { id: any }){//这里查信息也是要用post，因为你传入的也有！！！
-    var that=this;
-    wx.request({
-      url: "http://localhost:3000/api/course/get-specific-course",
-      data: {
-        "_id": options.id,
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       },
       header: {
         'content-type': 'application/json'
       },
       method: 'POST',
-<<<<<<< HEAD
       responseType: 'text',
 
       success: res => {
@@ -100,30 +82,10 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-=======
-
-      success(res) {
-        console.log("信息获取成功")
-        that.setData({
-          courseList: res.data as Course[],
-        })
-        return
-      },
-    })
-  },
-  editThis(e: { currentTarget: { dataset: { item: any } } }) {
-    const id = e.currentTarget.dataset.item;
-    wx.navigateTo({
-      url: "../editXXX/editCoursedata/editInput?id=" + id,
-    })
-  },
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   onReady() {
 
   },
 
-<<<<<<< HEAD
   /**
    * 生命周期函数--监听页面显示
    */
@@ -135,50 +97,31 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-=======
-
-  onShow() {
-    this.onLoad()
-  },
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   onHide() {
 
   },
 
-<<<<<<< HEAD
   /**
    * 生命周期函数--监听页面卸载
    */
-=======
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   onUnload() {
 
   },
 
-<<<<<<< HEAD
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-=======
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   onPullDownRefresh() {
 
   },
 
-<<<<<<< HEAD
   /**
    * 页面上拉触底事件的处理函数
    */
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   onReachBottom() {
 
   },
 
-<<<<<<< HEAD
   /**
    * 用户点击右上角分享
    */
@@ -324,10 +267,5 @@ Page({
       }
     })
 
-=======
-
-  onShareAppMessage() {
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   }
 })

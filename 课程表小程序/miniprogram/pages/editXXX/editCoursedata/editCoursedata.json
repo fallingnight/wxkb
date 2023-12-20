@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "usingComponents": {
     "color-picker":"mini-color-picker/color-picker",
 
@@ -7,7 +6,4 @@
     "van-calendar ": "@vant/weapp/calendar/index",
     "van-cell-group": "@vant/weapp/cell-group/index"
   }
-=======
-  "usingComponents": {}
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 }

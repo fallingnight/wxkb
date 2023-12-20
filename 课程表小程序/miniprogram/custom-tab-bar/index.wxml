@@ -2,13 +2,8 @@
   <view class="tab-bar-border"></view>
   <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
   <view>
-<<<<<<< HEAD
     <image class="tab-image" src="{{selected == index ? item.selectedIconPath : item.iconPath}}"></image>
     <view class="tab-text" style="color: {{selected == index ? selectedColor : color}}">{{item.text}}</view>
-=======
-    <image class="tab-image" src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
-    <view class="tab-text" style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</view>
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     </view>
   </view>
 </view>

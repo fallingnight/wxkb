@@ -8,7 +8,6 @@
       <view class="moreMenu">
         <search-input />
         <addAndEditHead pageIndex="0"></addAndEditHead>
-<<<<<<< HEAD
         <view class="functionButton">
           <view class="buttonBox">
           <button class="addCourseButton" style="width:85%;background-color: rgb(238, 199, 128);" bind:tap="selectCourseTable">编 辑 课 程 表</button>
@@ -25,8 +24,6 @@
           <button class="editCourseButton" style="width:85%;background-color:#9685c5;" bind:tap="exportCourseTable">导 出</button>
   </view>
 </view>
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       </view>
     </view>
   </van-popup>
@@ -54,15 +51,9 @@
             </view>
           </view>
         </view>
-<<<<<<< HEAD
         <view class="courseItem" wx:for="{{courseList}}" wx:key="key" style="top:{{(item.startTime)*120}}rpx;left:{{(isMonday?item.whichDay:(item.whichDay+1>6?0:item.whichDay+1))*(750-50)/7}}rpx;height:{{((item.endTime-item.startTime+1)>0?item.endTime-item.startTime+1:1)*120}}rpx;" bind:tap="showDetail" data-item="{{item._id}}">
           <view class="courseItemContent" wx:if="{{checked==1||(checked==2 && item.group==courseGroupList[nowCourseGroup-1]._id)}}" style="background-color:{{item.color}};opacity:{{xs.isCourseInCurrentWeek(item,nowWeek)}};">
             <text>{{item.courseName}}\n{{item.teacher}}\n{{item.place}}\n{{xs.isCourseInCurrentWeek(item,nowWeek)===1?'':'(非本周课程)'}}</text>
-=======
-        <view class="courseItem" wx:for="{{courseList}}" wx:key="key" style="top:{{(item.startTime)*120}}rpx;left:{{(isMonday?item.whichDay:(item.whichDay+1>6?0:item.whichDay+1))*(750-50)/7}}rpx;height:{{((item.endTime-item.startTime+1)>0?item.endTime-item.startTime+1:1)*120}}rpx;">
-          <view class="courseItemContent" style="background-color:{{item.color}};">
-            <text>{{item.courseName}}\n{{item.teacher}}</text>
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           </view>
         </view>
       </view>
@@ -80,7 +71,6 @@
       </view>
     </view>
   </view>
-<<<<<<< HEAD
 </van-popup>
 <van-popup closeable show="{{showSelectCourseTable}}" position="bottom" bind:close="hideSelectCourseTable" round>
   <view class="selectWeekPopup">
@@ -153,6 +143,3 @@
 
 
 </wxs>
-=======
-</van-popup>
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

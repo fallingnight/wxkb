@@ -1,31 +1,15 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
-<<<<<<< HEAD
   <view slot="content">添加课程</view>
 </cu-custom>
 <view class="body">
     <view class="input">
-=======
-  <view slot="content">修改课程</view>
-</cu-custom>
-<view class="body">
-  <view class="title">
-    <text>编辑课程</text>
-  </view>
-  <form bindsubmit='inputForm'>
-    <view class="input">
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       <view class="courseName">
         <view class="inputBlock">
           <view class="weui-cells__title">课程名:</view>
           <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
-<<<<<<< HEAD
               <input class="weui-input" auto-focus value="{{newCourse.courseName}}" bindinput="courseNameInputAction" placeholder="请输入课程名" />
-=======
-              <input class="weui-input" value="{{_res[0].courseName}}" auto-focus name="courseName" placeholder="" />
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
             </view>
           </view>
         </view>
@@ -36,7 +20,6 @@
           <view class="weui-cells__title">任课教师:</view>
           <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
-<<<<<<< HEAD
               <input class="weui-input" value="{{newCourse.teacher}}" bindinput="teacherInputAction" placeholder="请输入任课教师" />
             </view>
           </view>
@@ -48,9 +31,6 @@
           <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
               <input class="weui-input" value="{{newCourse.place}}" bindinput="placeInputAction" placeholder="请输入上课地点"/>
-=======
-              <input class="weui-input" value="{{_res[0].teacher}}" name="teacher" />
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
             </view>
           </view>
         </view>
@@ -58,7 +38,6 @@
 
       <view class="whichTime">
         <view class="picker_title">时间:</view>
-<<<<<<< HEAD
         <picker bindchange="bindDayChange" value="{{whichDayIndex}}" range="{{whichDayArray}}">
           <view class="whichDay_picker">
             星期{{whichDayArray[whichDayIndex]}}
@@ -90,27 +69,11 @@
         <picker bindchange="bindEndWeekChange" value="{{endWeekIndex}}" range="{{endWeekArray}}">
           <view class="time_picker">
             至第{{endWeekArray[endWeekIndex]}}周
-=======
-        <picker bindchange="bindPickerChange" value="{{dayIndex}}" range="{{dayArray}}">
-          <view class="whichDay_picker">
-            星期{{dayArray[dayIndex]}}
-          </view>
-        </picker>
-        <picker bindchange="bindStartTimeChange" value="{{startTime}}" range="{{timeArray}}">
-          <view class="time_picker">
-            自第{{timeArray[startTime]}}节课
-          </view>
-        </picker>
-        <picker bindchange="bindEndTimeChange" value="{{endTime}}" range="{{timeArray}}">
-          <view class="time_picker">
-            至第{{timeArray[endTime]}}节课
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           </view>
         </picker>
       </view>
 
       <view class="customization">
-<<<<<<< HEAD
         <view class="picker_title_group">课程组:</view>
         <picker bindchange="bindGroupChange" range-key="groupname" value="{{groupIndex}}" range="{{groupList}}">
           <view class="whichGroup_picker">
@@ -131,29 +94,4 @@
     <view class="deleteThis">
     <button class="delete_button" bind:tap="delete">删除</button>
   </view>
-=======
-        <view class="picker_title_group">组:</view>
-        <picker bindchange="bindGroupChange" value="{{groupIndex}}" range="{{groupArray}}">
-          <view class="whichGroup_picker">
-            {{groupIndex}}
-          </view>
-        </picker>
-        <view class="picker_title_color">颜色:</view>
-        <view wx:if="{{color}}">
-          <view style="background:{{color}};width:100px;height:24px;" bindtap="toPick"></view>
-          <color-picker bindchangeColor="pickColor" initColor="{{color}}" show='{{pick}}' />
-        </view>
-      </view>
-
-    </view>
-
-    <view class="submitInfo">
-      <button class="yes_button" form-type="submit">确认</button>
-    </view>
-  </form>
-  <view class="deleteThis">
-    <button class="delete_button" bind:tap="delete">删除</button>
-  </view>
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 </view>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export const CourseTimeMap = {
   1: { start: "08:15", end: "09:00" },
   2: { start: "09:10", end: "09:55" },
@@ -14,8 +13,6 @@ export const CourseTimeMap = {
   12: { start: "21:10", end: "21:55" }
 };
 
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 export const formatTime = (date: Date) => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -68,11 +65,7 @@ export const rgb2hex = (rgbString: string) => {
   if (match) {
     const [, red, green, blue] = match.map(Number);
     const hexColor = `#${red.toString(16).padStart(2, '0')}${green.toString(16).padStart(2, '0')}${blue.toString(16).padStart(2, '0')}`;
-<<<<<<< HEAD
     return hexColor.toUpperCase();
-=======
-    return hexColor.toUpperCase(); 
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   }
   return null
 }
@@ -85,7 +78,6 @@ export const hex2rgb = (hexString: string) => {
     return rgbColor;
   }
   return null;
-<<<<<<< HEAD
 }
 
 export const getNowFullTime = () => {
@@ -151,6 +143,3 @@ export const mapToNearestTime = (weekday: number, startHour: number, startMinute
   return { formatedDate, formatReminderDate };
 }
 
-=======
-};
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

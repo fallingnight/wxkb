@@ -9,7 +9,6 @@
       <view class="item">
         <view class="bigTitle">
           <text class="title">{{item.courseName}}</text>
-<<<<<<< HEAD
           <view class="info">
             <text class="info-left">{{item.teacher}}</text>
             <text class="info-left">{{item.place}}</text>
@@ -18,13 +17,6 @@
             <text class="info-txt">星期{{whichDay[item.whichDay]}}</text>
             <text class="info-txt">自第{{item.startTime-0+1}}节 至 第{{item.endTime-0+1}}节</text>
             <text class="info-txt">{{item.startWeek-0+1}}-{{item.endWeek-0+1}}周</text>
-=======
-          <text class="teacher">{{item.teacher}}</text>
-          <view class="info">
-            <text class="info-txt">{{item.group}}组</text>
-            <text class="info-txt">星期{{whichDay[item.whichDay]}}</text>
-            <text class="info-txt">自 第{{item.startTime-0+1}}节 至 第{{item.endTime-0+1}}节</text>
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           </view>
         </view>
       </view>

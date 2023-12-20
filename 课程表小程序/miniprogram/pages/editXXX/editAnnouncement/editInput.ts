@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import {getNowFullTime} from '../../../utils/util';
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 Page({
   data: {
     _id: String,
@@ -32,20 +29,6 @@ Page({
 
   },
 
-<<<<<<< HEAD
-=======
-  getNowDate() {
-    var myDate = new Date;
-    var year = myDate.getFullYear(); //获取当前年
-    var mon = myDate.getMonth() + 1; //获取当前月
-    var date = myDate.getDate(); //获取当前日
-    var hours = myDate.getHours(); //获取当前小时
-    var minutes = myDate.getMinutes(); //获取当前分钟
-    var seconds = myDate.getSeconds(); //获取当前秒
-    var now = year + "-" + mon + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
-    return now;
-  },
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 
   getContent(e: { detail: { value: StringConstructor } }) {
     this.data.content = e.detail.value
@@ -87,11 +70,7 @@ Page({
   },
 
   inputForm(data: { detail: { value: { title: string } } }) {
-<<<<<<< HEAD
     console.log(this.data._id, getNowFullTime(), data.detail.value.title, this.data.content)
-=======
-    console.log(this.data._id, this.getNowDate(), data.detail.value.title, this.data.content)
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     if (data.detail.value.title == 'null') {
       wx.showToast({
         title: '课程名为空',
@@ -107,11 +86,7 @@ Page({
         url: "http://localhost:3000/api/announcement/edit",
         data: {
           "_id": this.data._id,
-<<<<<<< HEAD
           "createTime": getNowFullTime(),
-=======
-          "createTime": this.getNowDate(),
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           "title": data.detail.value.title,
           "content": this.data.content
         },

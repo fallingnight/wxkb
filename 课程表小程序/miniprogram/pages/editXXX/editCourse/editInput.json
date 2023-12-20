@@ -1,10 +1,6 @@
 {
-<<<<<<< HEAD
   "usingComponents": {
     "color-picker":"mini-color-picker/color-picker",
     "editReminder": "../../../components/editReminder/editReminder"
   }
-=======
-  "usingComponents": {"color-picker":"mini-color-picker/color-picker" }
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Course } from '../../dataStructure/dataStructure';
 import { TimeData } from '../../miniprogram_npm/@vant/weapp/count-down/utils';
 var app = getApp()
@@ -37,27 +36,6 @@ Page({
         "teacher":that.data.teacher,
         "place":that.data.place,
         "whichDay":dayIndex==-1?'':dayIndex
-=======
-import {Course} from '../../dataStructure/dataStructure';
-var app = getApp()
-Page({
-  data: {
-    courseName: '' as string
-  },
-  courseNameInputAction: function (options: { detail: any }) {
-    this.data.courseName=options.detail.value
-  },
-  inputForm(){
-    var that = this;
-    wx.showLoading({
-      title: "登录中"
-    })
-    wx.request({
-      url: "http://localhost:3000/api/course/search",
-      data: {
-        "username": app.globalData.usernameDisplay,
-        "courseName": that.data.courseName
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       },
       header: {
         'content-type': 'application/json'
@@ -77,16 +55,10 @@ Page({
         }
         else {
           console.log("搜索成功")
-<<<<<<< HEAD
           console.log(res.data)
           const encodedObject = encodeURIComponent(JSON.stringify(res.data as Course[]));
           wx.navigateTo({
             url: "../courseDetail/courseDetailList?obj=" + encodedObject,
-=======
-          const id = (res.data as Course)._id
-          wx.navigateTo({
-            url: "../courseDetail/courseDetailList?id=" + id,
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
           })
         }
         return

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { getNowFullTime} from '../../../utils/util';
 
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 var app=getApp()
 Page({
 
@@ -32,11 +29,7 @@ Page({
       url: "http://localhost:3000/api/announcement/new",
       data: {
         "username": app.globalData.usernameDisplay,
-<<<<<<< HEAD
         "createTime": getNowFullTime(),
-=======
-        "createTime": this.getNowDate(),
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
         "title": data.detail.value.title,
         "content": this.data.content
       },
@@ -48,7 +41,6 @@ Page({
 
       success(res) {
         wx.hideLoading()
-<<<<<<< HEAD
         if(res.statusCode!=404){
           console.log("添加成功")
           }else{
@@ -59,10 +51,6 @@ Page({
             });
             return
           }
-=======
-        console.log("添加成功")
-        console.log(res)
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
         wx.navigateBack();
         return
       },
@@ -77,22 +65,6 @@ Page({
     this.data.content=e.detail.value
   },
 
-<<<<<<< HEAD
-=======
-  getNowDate() {
-    var myDate = new Date;
-    var year = myDate.getFullYear(); //获取当前年
-    var mon = myDate.getMonth() + 1; //获取当前月
-    var date = myDate.getDate(); //获取当前日
-    var hours = myDate.getHours(); //获取当前小时
-    var minutes = myDate.getMinutes(); //获取当前分钟
-    var seconds = myDate.getSeconds(); //获取当前秒
-    var now = year + "-" + mon + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
-    return now;
-  },
-
-
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   /**
    * 生命周期函数--监听页面加载
    */

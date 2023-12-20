@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import {Coursedata} from '../../../dataStructure/dataStructure'; 
 
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 var app = getApp();
 
 Page({
@@ -11,7 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
     pageTitle: '添加课程',
     showWhichDay: false,
     whichDayArray: ['一', '二', '三', '四', '五', '六', '日'],
@@ -46,8 +42,6 @@ Page({
       place: '',
       schoolID: ''
     } as Coursedata,
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 
   },
   
@@ -56,13 +50,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-<<<<<<< HEAD
   onLoad(options: {id:string}) {
     this.getStartTimeArray();
-=======
-  onLoad() {
-  
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
 
   /**
@@ -113,7 +102,6 @@ Page({
    */
   onShareAppMessage() {
 
-<<<<<<< HEAD
   },
   bindWhichDayChange(e: {detail: {value: '1'}}) {
     this.data.newCourse.whichDay = parseInt(e.detail.value);
@@ -221,7 +209,5 @@ Page({
       }
     });
 
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   }
 })

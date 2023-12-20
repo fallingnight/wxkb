@@ -2,12 +2,8 @@
   "usingComponents": {
     "search-input": "../../components/search-input/search-input",
     "addAndEditHead": "../../components/addAndEditHead/addAndEditHead",
-<<<<<<< HEAD
     "van-popup": "@vant/weapp/popup/index",
     "van-radio-group": "@vant/weapp/radio-group/index",
     "van-radio": "@vant/weapp/radio/index"
-=======
-    "van-popup": "@vant/weapp/popup/index"
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   }
 }

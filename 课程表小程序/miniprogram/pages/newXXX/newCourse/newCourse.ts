@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import { Course, Coursedata, CourseGroup, Reminder } from '../../../dataStructure/dataStructure';
 import { rgb2hex,CourseTimeMap, mapToNearestTime } from '../../../utils/util';
 
-=======
-import { rgb2hex } from '../../../utils/util';
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 var app = getApp();
 const brightColors = [
   'rgb(255, 87, 51)', 'rgb(255, 215, 0)', 'rgb(199, 21, 133)', 'rgb(32, 178, 170)',
@@ -20,7 +16,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
     whichDayArray: ['一', '二', '三', '四', '五', '六', '日'],
     whichDayIndex: 0,
 
@@ -82,68 +77,16 @@ Page({
     this.data.newCourse.whichDay = parseInt(e.detail.value);
     this.setData({
       whichDayIndex: parseInt(e.detail.value)
-=======
-    courseName: { type: String, value: "null" },
-    teacher: { type: String },
-    dayArray: ['一', '二', '三', '四', '五', '六', '日'],
-    groupArray: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-    timeArray: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-    color: brightColors[Math.floor(Math.random() * brightColors.length)],
-    pick: false,
-    dayObjectArray: [
-      {
-        id: 0,
-        name: '一'
-      },
-      {
-        id: 1,
-        name: '二'
-      },
-      {
-        id: 2,
-        name: '三'
-      },
-      {
-        id: 3,
-        name: '四'
-      },
-      {
-        id: 4,
-        name: '五'
-      },
-      {
-        id: 5,
-        name: '六'
-      },
-      {
-        id: 6,
-        name: '日'
-      },
-    ],
-    dayIndex: 0,
-    groupIndex: 0,
-    startTime: '6',
-    endTime: '7'
-  },
-  bindPickerChange: function (e: { detail: { value: any } }) {
-    this.setData({
-      dayIndex: e.detail.value
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     })
   },
   bindStartTimeChange: function (e: { detail: { value: any } }) {
     this.setData({
-<<<<<<< HEAD
       startTimeIndex: e.detail.value,
       'newCourse.startTime':e.detail.value,
-=======
-      startTime: e.detail.value
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     })
   },
   bindEndTimeChange: function (e: { detail: { value: any } }) {
     this.setData({
-<<<<<<< HEAD
       endTimeIndex: e.detail.value,
       'newCourse.endTime':e.detail.value,
     })
@@ -164,9 +107,6 @@ Page({
     this.setData({
       endWeekIndex: e.detail.value,
       'newCourse.endWeek':e.detail.value,
-=======
-      endTime: e.detail.value
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     })
   },
   bindGroupChange: function (e: { detail: { value: any } }) {
@@ -174,7 +114,6 @@ Page({
       groupIndex: e.detail.value
     })
   },
-<<<<<<< HEAD
   bindPickerCoursedata: function (e: { detail: { value: any } }) {
     let i = e.detail.value;
     let content = this.data.coursedataListShow[i].content;
@@ -215,8 +154,6 @@ Page({
           this.setData({coursedataListShow:this.data.coursedataList})
         }
   },
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   pickColor: function (e: { detail: { color: any; }; }) {
     this.setData({
       color: e.detail.color
@@ -227,7 +164,6 @@ Page({
       pick: true
     })
   },
-<<<<<<< HEAD
   getStartTimeArray() {
     var timeArray = []
     for (var i = 1; i <= 20; i++) {
@@ -314,19 +250,6 @@ Page({
     }
     if ((parseInt(this.data.newCourse.startTime) > parseInt(this.data.newCourse.endTime))||(parseInt(this.data.newCourse.startWeek) > parseInt(this.data.newCourse.endWeek))) {
     console.log(this.data.newCourse.startTime,this.data.newCourse.endTime,this.data.newCourse.startWeek,this.data.newCourse.endWeek)
-=======
-  inputForm(data: { detail: { value: { courseName: string; teacher: any; }; }; }) {
-    if (data.detail.value.courseName == 'null') {
-      console.log(data.detail.value.courseName, this.data.startTime)
-      wx.showToast({
-        title: '课程名为空',
-        icon: 'error',
-        duration: 1000
-      })
-      return
-    }
-    if (this.data.startTime > this.data.endTime) {
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       wx.showToast({
         title: '时间设置错误',
         icon: 'error',
@@ -335,7 +258,6 @@ Page({
       return
     }
     wx.showLoading({
-<<<<<<< HEAD
       title: "添加中"
     });
     const sectionInfo = CourseTimeMap[parseInt(this.data.newCourse.startTime)+1];
@@ -352,28 +274,11 @@ Page({
     wx.request({
       url: "http://localhost:3000/api/reminder/new",
       data: this.data.reminder,
-=======
-      title: "上传中"
-    })
-    wx.request({
-      url: "http://localhost:3000/api/course/new",
-      data: {
-        "username": app.globalData.usernameDisplay,
-        "courseName": data.detail.value.courseName,
-        "whichDay": this.data.dayIndex,
-        "startTime": this.data.startTime,
-        "endTime": this.data.endTime,
-        "teacher": data.detail.value.teacher,
-        "group": this.data.groupIndex,
-        "color": rgb2hex(this.data.color)
-      },
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
       header: {
         'content-type': 'application/json'
       },
       method: 'POST',
       responseType: 'text',
-<<<<<<< HEAD
       success(res) {
         console.log(res)
         that.setData({
@@ -393,16 +298,11 @@ Page({
         responseType: 'text',
 
         success(res) {
-=======
-
-      success(res) {
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
         wx.hideLoading()
         console.log("添加成功")
         console.log(res)
         wx.navigateBack();
         return
-<<<<<<< HEAD
         },
         fail() {
         wx.hideLoading()
@@ -411,14 +311,6 @@ Page({
     });}
   });
 
-=======
-      },
-      fail() {
-        wx.hideLoading()
-        console.log("未能连上服务器数据库")
-      }
-    })
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
 
 
@@ -426,16 +318,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-<<<<<<< HEAD
     this.getStartTimeArray();
     this.getAllCoursedata();
     this.getCourseGroups();
     this.setData({
       'newCourse._courseTableID': app.globalData.courseTable[app.globalData.nowCourseTableIndex]._id,
     });
-=======
-  
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
 
   /**
@@ -449,18 +337,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-<<<<<<< HEAD
     /*
     this.setData({
       color:brightColors[Math.floor(Math.random() * brightColors.length)]
     });
     */
-=======
-    this.setData({
-      color:brightColors[Math.floor(Math.random() * brightColors.length)]
-    });
-  
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
 
   /**
@@ -497,13 +378,9 @@ Page({
   onShareAppMessage() {
 
   }
-<<<<<<< HEAD
 })
 
 interface CoursedataString{
   _id:string;
   content:string;
 }
-=======
-})
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00

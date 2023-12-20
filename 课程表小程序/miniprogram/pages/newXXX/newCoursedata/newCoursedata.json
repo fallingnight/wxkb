@@ -1,13 +1,9 @@
 {
   "usingComponents": {
-<<<<<<< HEAD
     "color-picker":"mini-color-picker/color-picker",
 
     "van-field ": "@vant/weapp/field/index",
     "van-calendar ": "@vant/weapp/calendar/index",
     "van-cell-group": "@vant/weapp/cell-group/index"
-=======
-    "color-picker":"mini-color-picker/color-picker" 
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   }
 }

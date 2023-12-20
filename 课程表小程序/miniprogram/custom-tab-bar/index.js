@@ -52,19 +52,12 @@ const adminList=[{
 Component({
   pageLifetimes: {
     show() {
-<<<<<<< HEAD
-=======
-      this.setData({
-        isAdmin:app.globalData.amIAdministrator,
-      })
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 
     }},
   data: {
     selected: 3,
     color: "#7A7E83",
     selectedColor: "#50d0d0",
-<<<<<<< HEAD
     list: app.globalData.amIAdministrator?adminList:commonlist,
     isAdmin: false,
 
@@ -80,13 +73,6 @@ Component({
     }
   },
 
-=======
-    isAdmin:app.globalData.amIAdministrator,
-    list: app.globalData.amIAdministrator?adminList:commonlist,
-
-  },
-  attached() {},
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   methods: {
     switchTab(e) {
       const data = e.currentTarget.dataset
@@ -99,7 +85,6 @@ Component({
         });
         return
       }
-<<<<<<< HEAD
       this.setData({
         selected: data.index,
       });
@@ -109,14 +94,4 @@ Component({
   },
 },
 
-=======
-      wx.switchTab({
-        url:url,
-      })
-      this.setData({
-        selected: data.index
-      })
-    }
-  }
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 })

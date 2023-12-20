@@ -1,9 +1,5 @@
 import { getDateObjs,getFirstdayofDate } from '../../utils/util';
-<<<<<<< HEAD
 import {Course,CourseTable,CourseGroup} from '../../dataStructure/dataStructure';
-=======
-import {Course} from '../../dataStructure/dataStructure';
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 var app = getApp();
 Component({
   pageLifetimes: {
@@ -14,32 +10,23 @@ Component({
           selected: 0
         })
       }
-<<<<<<< HEAD
       this.getCourseTable();
       this.getCourseGroup();
       this.getNowDate();
       this.getCourseData();
 
-=======
-      this.getCourseData()
-      this.getNowDate()
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     }
   },
   data: {
     nowWeek: 1, //当前周数
-<<<<<<< HEAD
     nowCourseTable:1,
     nowCourseGroup:1,
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     daysPerWeek: 7,
     weekdayIndex: ['日','一', '二', '三', '四', '五', '六', '日'], 
     startDate: '2023/09/01', //开学日期
     isMonday:true, //周一第一天or周日第一天，以后做用户自定义配置的时候用，已经做好了自适应显示，可以手动切换观察显示效果
     totalWeek: 20,
     selectedMonth:1,
-<<<<<<< HEAD
     checked:'1',
     showSelectWeek: false, //打开选择周数菜单
     showSelectCourseTable:false,
@@ -50,13 +37,6 @@ Component({
     weekDateList:[] as number[], //当前周日期列表
     courseTableList:[]as CourseTable[],
     courseGroupList:[]as CourseGroup[],
-=======
-    showSelectWeek: false, //打开选择周数菜单
-    didILogin: app.globalData.didILogin,
-    showMore: false, //打开更多菜单
-    courseList: [] as Course[], //课程列表
-    weekDateList:[] as number[] //当前周日期列表
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
   },
   methods: {
     //一些菜单的展开和关闭
@@ -75,7 +55,6 @@ Component({
         showSelectWeek: false,
       });
     },
-<<<<<<< HEAD
     hideSelectCourseTable(){
       this.setData({
         showSelectCourseTable: false,
@@ -96,8 +75,6 @@ Component({
         showSelectCourseGroup: false,
       });
     },
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     //选择周数
     selectWeek(e: any) {
       const week = e.currentTarget.dataset.week
@@ -105,7 +82,6 @@ Component({
         nowWeek: week,
       });
     },
-<<<<<<< HEAD
     selectNowTable(e: any) {
       const table = e.currentTarget.dataset.table
       this.setData({
@@ -168,8 +144,6 @@ Component({
         url: "../courseDetail/courseDetail?id=" + id,
       })
     },
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     //获取选中周的日期
     getSelectedWeekDate(){
       const startDate=getFirstdayofDate(new Date(this.data.startDate),this.data.isMonday)
@@ -206,7 +180,6 @@ Component({
       }
       this.getSelectedWeekDate()
     },
-<<<<<<< HEAD
     getCourseTable(){
       var that=this
       wx.request({
@@ -259,23 +232,15 @@ Component({
           return;
         }});
     },
-=======
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
     //获取课程信息
     getCourseData(){
       const that=this
       wx.request({
         //这是本地mock的测试链接，用的时候把这个换成后端处理对应请求的连接
-<<<<<<< HEAD
         url: "http://localhost:3000/api/course/get-table-courses", 
         data: {
           username: app.globalData.usernameDisplay,
           _courseTableID:app.globalData.courseTable[app.globalData.nowCourseTableIndex]._id
-=======
-        url: "http://localhost:3000/api/course/get-all-courses", 
-        data: {
-          username: app.globalData.usernameDisplay
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
         },
         header: {
           'content-type': 'application/json'
@@ -287,7 +252,6 @@ Component({
           that.setData({
             courseList: res.data as Course[]
           })
-<<<<<<< HEAD
           console.log(res);
           console.log(app.globalData.courseTable[app.globalData.nowCourseTableIndex]._id)
           return
@@ -448,15 +412,6 @@ Component({
     },
 
 }})
-=======
-          return
-        },
-      })
-    }
-
-  }
-})
->>>>>>> 35ef0c111c76f9fc1a00e74a0bf281286af91b00
 
 
 
